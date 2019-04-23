@@ -1,0 +1,9 @@
+- name: Install Wordpress
+  hosts: app
+  become: true
+  remote_user: root
+  tasks:
+  - name: Install Worpress
+    apt:
+      name: wordpress
+      state: present
