@@ -1,0 +1,13 @@
+- name: Install Apache
+  hosts: app
+  become: true
+  remote_user: root
+  tasks:
+  - name: Install Apache
+    apt:
+      name: apache2
+      state: present
+  - name: Start Apache
+    service:
+      name: apache2
+      state: restarted
