@@ -1,0 +1,14 @@
+- name: Install ftp
+  hosts: app
+  become: true
+  remote_user: root
+  tasks:
+  - name: Install FTP
+    apt:
+     name: vsftpd
+     state: present
+
+  - name: Start ftp
+    service:
+      name: vsftpd
+      state: restarted
