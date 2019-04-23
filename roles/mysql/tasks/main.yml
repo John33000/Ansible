@@ -1,0 +1,14 @@
+- name: Install Mysql
+  hosts: db
+  become: true
+  remote_user: root
+  tasks:
+  - name: Install mysql
+    apt:
+      name: mysql-server
+      state: present
+
+  - name: Start mysql
+    service:
+      name: mysql
+      state: restarted
