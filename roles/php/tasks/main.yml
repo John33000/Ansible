@@ -1,0 +1,13 @@
+name: Install php
+  hosts: app
+  become: true
+  remote_user: root
+  tasks:
+  - name: Install php
+    become: true
+    apt: 
+      name: php
+      state: present
+  - service:
+      name: apache2
+      state: restarted
