@@ -10,8 +10,9 @@ git clone : https://github.com/John33000/Ansible.git
 cd Ansible
 Modifiez le fichier : inventory.ini afin d'y rajouter vos IP.
 vi/nano inventory.ini
-
-ansible_host <IP>
-ansible_host <IP>
+[db]
+ <IP>
+[Web]
+<IP>
 
 Une fois cela fait lancez la commande : ansible-playbook play-Infra.yml
